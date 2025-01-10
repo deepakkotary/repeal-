@@ -1,13 +1,9 @@
 console.log('Hello from version 2');
 // redirect to in if localstorage dont have any user id 
-var popUps = document.getElementsByClassName('popUps')[0];
-window.onload = function(){
- popUps.style.display="none";
-console.log("js is running");
-};
+
 var userId = localStorage.getItem('userId');
 if (!userId){
-    window.location.href = 'http://127.0.0.1:5500/versions/verson%202/in/index.html';
+    window.location.href = '/in/index.html';
    
 }
 // fatch firebase real time data base 
@@ -82,21 +78,3 @@ document.getElementById("logout").addEventListener('click',event=>{
   location.reload();  
 });
 // making a event for hiding pop up
-
-document.getElementById("up").addEventListener('click',event=>{
-popUps.style.display="none";
-document.getElementsByClassName("search").style.display='none';
-document.getElementsByClassName("menue").style.display='none';
-});
-
-document.getElementById('seur').addEventListener('click',event=>{
-  popUps.style.display="flex";
-  document.getElementsByClassName("search")[0].style.display='flex';
-  document.getElementsByClassName("exist")[0].style.display='flex';
-  
-});
-document.getElementById('men').addEventListener('click',event=>{
-  popUps.style.display="flex";
-  document.getElementsByClassName("menue")[0].style.display='flex';
-  document.getElementsByClassName("exist")[0].style.display='flex';
-});
